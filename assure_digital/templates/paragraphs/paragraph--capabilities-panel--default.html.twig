@@ -1,0 +1,136 @@
+{#
+/**
+ * @file
+ * @copyright Copyright (c) 2020 ijalilkhan.com
+ * Assure digital implementation to display a hero header panel paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  'our-capabilities-section'
+]
+%}
+<!-- OUR CAPABILITIES SECTION -->
+{% block paragraph %}
+  <section{{ attributes.addClass(classes) }} aria-label="Our capabilities Panel">
+    <div class="container">
+      {% block content %}
+        <div class="row">
+          <div class="col-12">
+            <h3 class="section-heading">{{ content.field_panel_heading }}</h3>
+          </div>
+          <div class="col-6 our-capabilities-left">
+            <div class="capabilities-image">
+              {{ content.field_capabilities_panel_image }}
+            </div>
+          </div>
+          <div class="col-6 our-capabilities-right">
+            <!-- Capabilities List Wrapper -->
+            {{ content.field_capabilities_accordian_blo }}
+            <div class="capabilities-list-wrapper">
+              <h4>Web</h4>
+              <div class="accordion capabilities-list" id="capabilities-list-1">
+                <div class="card">
+                  <div class="card-header" id="capabilities-list-1_headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#capabilities-list-1_collapseOne" aria-expanded="true" aria-controls="capabilities-list-1_collapseOne">
+                        <span class="accordion-trigger-icon accordion-trigger-icon-active"><i class="fa fa-plus"></i></span> Strategy & design
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="capabilities-list-1_collapseOne" class="collapse show" aria-labelledby="capabilities-list-1_headingOne" data-parent="#capabilities-list-1">
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="capabilities-list-1_headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#capabilities-list-1_collapseTwo" aria-expanded="false" aria-controls="capabilities-list-1_collapseTwo">
+                        <span class="accordion-trigger-icon"><i class="fa fa-plus"></i></span> Website development
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="capabilities-list-1_collapseTwo" class="collapse" aria-labelledby="capabilities-list-1_headingTwo" data-parent="#capabilities-list-1">
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="capabilities-list-1_headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#capabilities-list-1_collapseThree" aria-expanded="false" aria-controls="capabilities-list-1_collapseThree">
+                        <span class="accordion-trigger-icon"><i class="fa fa-plus"></i></span> Website integration
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="capabilities-list-1_collapseThree" class="collapse" aria-labelledby="capabilities-list-1_headingThree" data-parent="#capabilities-list-1">
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="capabilities-list-1_headingFour">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#capabilities-list-1_collapseFour" aria-expanded="false" aria-controls="capabilities-list-1_collapseFour">
+                        <span class="accordion-trigger-icon"><i class="fa fa-plus"></i></span> Custom development
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="capabilities-list-1_collapseFour" class="collapse" aria-labelledby="capabilities-list-1_headingFour" data-parent="#capabilities-list-1">
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Capabilities List Wrapper -->
+          </div>
+        </div>
+
+      {% endblock %}
+    </div>
+  </section>
+{% endblock paragraph %}
+<!-- ./OUR CAPABILITIES SECTION -->

@@ -1,0 +1,87 @@
+//JQuery Module Pattern
+
+// An object literal
+var app = {
+  init: function() {
+    app.functionOne();
+  },
+  functionOne: function () {
+  }
+};
+(function($, Drupal) {
+  $("document").ready(function () {
+    app.init();
+
+    var Menu = {
+
+      el: {
+        ham: $('.menu-icon'),
+        menuTop: $('.menu-top'),
+        menuMiddle: $('.menu-middle'),
+        menuBottom: $('.menu-bottom')
+      },
+
+      init: function() {
+        Menu.bindUIactions();
+      },
+
+      bindUIactions: function() {
+        Menu.el.ham
+            .on(
+                'click',
+                function(event) {
+                  Menu.activateMenu(event);
+                  event.preventDefault();
+                }
+            );
+      },
+
+      activateMenu: function() {
+        Menu.el.menuTop.toggleClass('menu-top-click');
+        Menu.el.menuMiddle.toggleClass('menu-middle-click');
+        Menu.el.menuBottom.toggleClass('menu-bottom-click');
+      }
+    };
+
+    Menu.init();
+
+    // RIPPLE BUTTON EFFECT
+    $('.btn').on('click', function (event) {
+      //event.preventDefault();
+
+      var $div = $('<div/>'),
+          btnOffset = $(this).offset(),
+          xPos = event.pageX - btnOffset.left,
+          yPos = event.pageY - btnOffset.top;
+
+
+
+      $div.addClass('ripple-effect');
+      var $ripple = $(".ripple-effect");
+
+      $ripple.css("height", $(this).height());
+      $ripple.css("width", $(this).height());
+      $div
+          .css({
+            top: yPos - ($ripple.height()/2),
+            left: xPos - ($ripple.width()/2),
+            background: $(this).data("ripple-color")
+          })
+          .appendTo($(this));
+
+      window.setTimeout(function(){
+        $div.remove();
+      }, 2000);
+    });
+
+    // STAGE BOX HOVER
+    $('.stages-boxes-container .field--name-field-panel-items > .field__item').mouseenter(function () {
+      $('.stages-boxes-container .field--name-field-panel-items > .field__item').removeClass('stage-box-active');
+      $(this).addClass('stage-box-active');
+    });
+
+    $('.video-trigger.youtube .trigger-icon').click(function(){
+      $('.video-embed-field-launch-modal').trigger('click');
+    })
+  });
+})(jQuery, Drupal);
