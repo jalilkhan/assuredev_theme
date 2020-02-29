@@ -17,6 +17,10 @@
         object-fit: cover;
         object-position: center;
         transition-duration: .3s;
+        @media (max-width: 991px) {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }
@@ -31,7 +35,9 @@
       width: 42px;
       height: 28px;
       cursor: pointer;
-
+      @media (max-width: 991px) {
+        margin-top: 35px;
+      }
       .menu-global {
         position: absolute;
         left: 0;
@@ -73,6 +79,8 @@
   &.header-fixed {
     position: fixed;
     width: 100%;
+    top: 0px;
+    height: 100px;
     background-color: $white-color;
 
     .brand-logo {

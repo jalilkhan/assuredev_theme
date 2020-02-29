@@ -18,7 +18,7 @@
       list-style-type: none;
 
       li {
-        
+
         a {
           position: relative;
           display: inline-block;
@@ -30,11 +30,13 @@
           font-weight: bold;
           text-decoration: none;
           z-index: 1;
+          padding-top: 0;
+          padding-bottom: 0;
 
           &:before {
             content: "";
             position: absolute;
-            top: 50px;
+            top: 55px;
             left: 0;
             width: 30px;
             height: 30px;

@@ -11,33 +11,35 @@
   // SECTION HEADING
   .section-heading {
     padding: 0 60px;
-    max-width: 600px;
-    font-size: 30px;
     line-height: 52px;
+    @media (max-width: 812px){
+      margin-top: 30px;
+      margin-bottom: 60px;
+      font-size: 4rem;
+      padding: 0 0px 0px 40px;
+    }
   }
 
   // HERO SECTION
   .hero-section {
 
-    .hero-left {
+       .hero-left {
 
-      h2 {
-        font-size: 30px;
-        line-height: 43px;
-        letter-spacing: 1.5px;
+         h2 {
+           letter-spacing: 1.5px;
 
-        &:before {
-          top: -20px;
-        }
-      }
-    }
+           &:before {
+             top: -6px;
+           }
+         }
+       }
 
     .hero-right {
 
       p {
-        padding: 0 140px;
-        font-size: 12px;
-        line-height: 24px;
+        padding: 0 50px 0 140px;
+        font-size: 22px;
+        line-height: 42px;
 
         &:before {
           left: 90px;
@@ -52,36 +54,21 @@
     .video-content-wrapper {
 
       .video-heading {
-        top: 175px;
-        width: 386px;
-        height: 320px;
 
         h4 {
-          padding: 80px 60px;
-          font-size: 24px;
-          line-height: 40px;
         }
       }
     }
 
     .video-player-wrapper {
-      max-width: 800px !important;
 
       .video-trigger {
 
         .trigger-icon {
-          width: 70px !important;
-          height: 70px !important;
-          line-height: 60px !important;
-          font-size: 30px !important;
         }
       }
 
       p {
-        margin-top: 30px !important;
-        font-size: 16px !important;
-        line-height: 24px !important;
-        max-width: 550px !important;
       }
     }
   }
@@ -136,21 +123,8 @@
 
   // GROWTH JOURNEY SECTION
   .growth-journey-section {
-
-    .growth-journey-image {
-      max-width: 930px;
-      height: 600px;
-    }
-
     .growth-journey-heading {
-      top: 100px;
-      padding: 60px;
-      width: 386px;
-      height: 370px;
-
       h3 {
-        font-size: 30px;
-        line-height: 50px;
       }
     }
   }
@@ -176,27 +150,14 @@
     }
 
     .difference-box {
-      padding: 40px;
-      margin-bottom: 40px;
-      width: 100%;
-      height: 320px;
 
       h5 {
-        padding-left: 40px;
-        margin-bottom: 30px;
-        font-size: 24px;
-        line-height: 30px;
 
         &:before {
-          top: 5px;
-          width: 20px;
-          height: 20px;
         }
       }
 
        p {
-         font-size: 16px;
-         line-height: 30px;
        }
     }
   }
@@ -288,9 +249,10 @@
             padding-left: 60px;
             font-size: 30px;
             line-height: 80px;
-
+            padding-top: 0;
+            padding-bottom: 0;
             &:before {
-              top: 30px;
+              top: 33px;
               width: 20px;
               height: 20px;
             }
@@ -306,17 +268,13 @@
   // HERO SECTION
   .hero-section {
 
-    .pr-0 {
-      padding-left: 0;
-    }
+
 
     .pl-0 {
       padding-right: 0;
     }
 
     .hero-left {
-      height: 300px;
-      text-align: center;
 
       h2 {
         margin-bottom: 80px;
@@ -358,6 +316,9 @@
           position: inherit;
           bottom: 20px;
           margin-bottom: 20px;
+          @media (max-width: 812px){
+            margin-bottom: 0px;
+          }
         }
 
         h4 {
@@ -365,6 +326,9 @@
           font-size: 18px;
           line-height: 30px;
           text-align: center;
+          @media (max-width: 812px){
+            padding-top: 20px;
+          }
         }
       }
     }
@@ -380,8 +344,8 @@
       p {
         padding: 20px !important;
         margin-top: 0 !important;
-        font-size: 14px !important;
-        line-height: 24px !important;
+        font-size: 18px !important;
+        line-height: 28px !important;
         text-align: center !important;
       }
     }
@@ -504,7 +468,7 @@
       padding: 40px;
       margin-bottom: 20px;
       width: 100%;
-      height: auto;
+      height: 100%;
 
       h5 {
         padding-left: 40px;
@@ -529,9 +493,16 @@
   // OUR CAPABILITIES SECTION
   .our-capabilities-section {
     padding: 40px 0;
-
+    .section-heading {
+      @media (max-width: 991px) {
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
     .our-capabilities-left {
-
+      @media (max-width: 991px) {
+        margin-top: 30px;
+      }
       .capabilities-image {
 
         img {
@@ -572,13 +543,15 @@
     .footer-logo {
       padding-top: 50px;
       text-align: center;
+      img{
+        max-width: 100%;
+      }
     }
 
     .footer-widgets {
 
       .widget-box {
         margin: 50px 0;
-        text-align: center;
 
         h4 {
           margin-bottom: 30px;
@@ -622,4 +595,42 @@
     }
   }
 
+}
+@media (min-width: 576px){
+  .container{
+    max-width: 100% ;
+  }
+  main#content{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (min-width: 768px){
+  .container{
+    max-width: 100% ;
+  }
+  main#content{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 992px){
+  .container{
+    max-width: 100% ;
+  }
+  main#content{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1200px){
+  .container{
+    max-width: 100% ;
+  }
+  main#content{
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

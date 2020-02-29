@@ -9,14 +9,21 @@
   color: #2C3442;
   overflow: hidden;
 
-  &.btn-yellow {
+  &.btn-yellow,&.form-submit {
     background-color: $primary-color;
 
     &:hover {
       background-color: darken($primary-color, 5%);
     }
   }
-
+  &.form-submit{
+    border: none;
+    &:hover,&:visited,&:active{
+      color: #2c3442 !important;
+      text-decoration: none !important;
+      background-color: darken($primary-color, 5%) !important;
+    }
+  }
   &.btn-gray {
     background-color: $gray-color-2;
 
@@ -39,13 +46,11 @@
     width: 100px;
     height: 100px;
     line-height: 1;
-
     .btn-text {
       display: none;
     }
 
     &:hover {
-      max-width: 458px;
       width: 100%;
 
       .btn-text {
@@ -80,4 +85,74 @@
     transform: scale(100);
     opacity: 0;
   }
+}
+
+
+// CONTACT SECTION
+form {
+  .form-group {
+    position: relative;
+    margin-bottom: 90px;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: auto;
+      font-size: 22px;
+      line-height: 37px;
+      letter-spacing: 0.6px;
+      font-weight: 500;
+      transition-duration: .3s;
+      color: $secondary-color;
+    }
+
+    input[type="text"], input[type="email"],input[type="tel"],textarea {
+      display: block;
+      width: 100%;
+      border: none;
+      font-size: 22px;
+      line-height: 37px;
+      letter-spacing: 0.6px;
+      font-weight: 500;
+      border-bottom: 1px solid $gray-color-5;
+      outline: none;
+      padding-left: 0px;
+      border-radius: 0px;
+    }
+    input:optional {
+      border-left-color: #999;
+    }
+    input:required {
+      border-left-color: palegreen;
+    }
+    input:invalid {
+      border-left-color: salmon;
+    }
+
+    .form-control:focus{
+      box-shadow: none;
+    }
+
+    &.field-focused {
+
+      label {
+        top: -30px;
+        font-size: 12px;
+      }
+    }
+    &.element-focus-in{
+      label {
+        color: #3C609F;
+      }
+      input[type="text"], input[type="email"],input[type="tel"],textarea{
+        border-bottom: 1px solid #3C609F;
+      }
+    }
+    &.field-has-value{
+      label{
+
+      }
+    }
+  }
+
 }

@@ -44,32 +44,25 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  'our-capabilities-section'
+  'contact-section'
 ]
 %}
-<!-- OUR CAPABILITIES SECTION -->
+
 {% block paragraph %}
-  <section{{ attributes.addClass(classes) }} aria-label="Our capabilities Panel">
+  <section{{ attributes.addClass(classes) }} aria-label="Webform Panel">
     <div class="container">
       {% block content %}
         <div class="row">
-          <div class="col-12">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
             <h3 class="section-heading">{{ content.field_panel_heading }}</h3>
           </div>
-          <div class="col-12 col-md-12 col-lg-6 our-capabilities-left">
-            <div class="capabilities-image">
-              {{ content.field_capabilities_panel_image }}
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="contact-form">
+              {{ content.field_webform_reference }}
             </div>
           </div>
-          <div class="col-12 col-md-12 col-lg-6 our-capabilities-right">
-            <!-- Capabilities List Wrapper -->
-            {{ content.field_capabilities_accordian_blo }}
-            <!-- ./Capabilities List Wrapper -->
-          </div>
         </div>
-
       {% endblock %}
     </div>
   </section>
 {% endblock paragraph %}
-<!-- ./OUR CAPABILITIES SECTION -->

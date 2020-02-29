@@ -33,6 +33,13 @@ header#header #navbar-main .navbar-brand {
   position: relative;
   padding: 60px;
 }
+@media (max-width: 812px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 50px 25px;
+  }
+}
 .stages-boxes-container .field--name-field-panel-items > .field__item:before {
   content: "";
   position: absolute;
@@ -46,7 +53,6 @@ header#header #navbar-main .navbar-brand {
 }
 .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active {
   width: 100%;
-  height: 522px;
   color: #FFFFFF;
 }
 .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active:before {
@@ -65,6 +71,19 @@ header#header #navbar-main .navbar-brand {
   font-size: 30px;
   background-color: #FFC910;
   color: #2C3442;
+}
+@media (max-width: 1279px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn {
+    height: 60px;
+    bottom: -30px;
+    line-height: 40px;
+    padding: 12px;
+  }
+}
+@media (max-width: 812px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn {
+    display: block;
+  }
 }
 .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn i.fa {
   transform: none;
@@ -85,6 +104,11 @@ header#header #navbar-main .navbar-brand {
 .stages-boxes-container .field--name-field-panel-items > .field__item .btn i.fa {
   transform: rotate(45deg);
 }
+@media (max-width: 812px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item .btn {
+    display: none;
+  }
+}
 .stages-boxes-container .field--name-field-panel-items > .field__item .field--name-field-panel-item-heading {
   padding-left: 0;
   font-size: 40px;
@@ -92,14 +116,38 @@ header#header #navbar-main .navbar-brand {
   letter-spacing: 1px;
   font-weight: bold;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item .field--name-field-panel-item-heading {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+@media (max-width: 767px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item .field--name-field-panel-item-heading {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
 .stages-boxes-container .field--name-field-panel-items > .field__item p {
   font-size: 22px;
   line-height: 42px;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item p {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
 .clients-section .client-box img {
-  width: auto;
+  width: 100%;
   height: auto;
-  object-fit: none;
+  object-fit: unset;
 }
 footer.footer {
   padding: 0;
@@ -175,6 +223,8 @@ a.btn.btn-animate .fa {
 .paragraph--type--testimonial-panel .slick__arrow .slick-arrow:before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
+  color: #2C3442;
+  font-size: 26px;
 }
 .paragraph--type--testimonial-panel .slick__arrow .slick-arrow.slick-prev {
   left: 45%;
