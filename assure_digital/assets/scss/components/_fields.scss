@@ -90,7 +90,7 @@
 
 // CONTACT SECTION
 form {
-  .form-group {
+  .form-group:not(.field--type-image):not(.form-type-select) {
     position: relative;
     margin-bottom: 90px;
 
@@ -106,7 +106,7 @@ form {
       color: $secondary-color;
     }
 
-    input[type="text"], input[type="email"],input[type="tel"],textarea {
+    input[type="text"], input[type="email"],input[type="tel"],input[type="password"],textarea {
       display: block;
       width: 100%;
       border: none;
@@ -118,15 +118,6 @@ form {
       outline: none;
       padding-left: 0px;
       border-radius: 0px;
-    }
-    input:optional {
-      border-left-color: #999;
-    }
-    input:required {
-      border-left-color: palegreen;
-    }
-    input:invalid {
-      border-left-color: salmon;
     }
 
     .form-control:focus{

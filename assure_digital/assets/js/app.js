@@ -83,16 +83,19 @@ var app = {
       $('.video-embed-field-launch-modal').trigger('click');
     })
 	// TESTIMONIAL SLIDER
-  $('.testimonials-slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 700,
-    autoplay:true,
-    autoplaySpeed: 2000,
-    arrows:false,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  });
+    if($('.testimonials-slider').length){
+      $('.testimonials-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 700,
+        autoplay:true,
+        autoplaySpeed: 2000,
+        arrows:false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+    }
+
 
   // CAPABILITIES TRIGGER
   $('.card .btn').click(function () {
