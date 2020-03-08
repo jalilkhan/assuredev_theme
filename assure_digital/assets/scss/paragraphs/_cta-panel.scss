@@ -32,7 +32,15 @@
     a.btn{
       width: 80%;
       left: 50%;
+      max-width: 458px;
       transform: translate(-50%);
+      font-weight: 600;
+
+      font-size: 30px;
+      @media (min-width: 813px) {
+        line-height: 60px;
+        height: 128px;
+      }
       @media (max-width: 812px){
         width: 70%;
         top: 30px;

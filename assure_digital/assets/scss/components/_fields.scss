@@ -13,7 +13,7 @@
     background-color: $primary-color;
 
     &:hover {
-      background-color: darken($primary-color, 5%);
+      background-color: darken($primary-color, 5%) !important;
     }
   }
   &.form-submit{
@@ -46,12 +46,19 @@
     width: 100px;
     height: 100px;
     line-height: 1;
+    @media (max-width: 767px) {
+      width: 100%;
+      text-align: left;
+    }
     .btn-text {
       display: none;
+      @media (max-width: 767px) {
+        display: inline-block;
+      }
     }
 
     &:hover {
-      width: 100%;
+      width: 100% !important;
 
       .btn-text {
         display: inline-block;
@@ -146,4 +153,12 @@ form {
     }
   }
 
+}
+.form-actions.webform-actions .btn.form-submit{
+  float: right;
+  max-width: 458px;
+  width: 100%;
+  font-weight: 600;
+  height: 128px;
+  padding-top: 41px;
 }

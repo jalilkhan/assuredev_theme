@@ -32,6 +32,28 @@ function assure_digital_form_system_theme_settings_alter(&$form, FormStateInterf
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
   );
+
+  // Site Mobile number
+  $form['mobile_number_fieldset'] = [
+    '#type' => 'details',
+    '#title' => t('Site Phone Number'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#weight' => -1,
+  ];
+
+  $form['mobile_number_fieldset']['assure_digital_settings']['mobile_label'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Phone Number Label'),
+    '#default_value' => theme_get_setting('mobile_label', 'assure_digital'),
+  );
+
+  $form['mobile_number_fieldset']['assure_digital_settings']['mobile_number'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Phone Number'),
+    '#default_value' => theme_get_setting('mobile_number', 'assure_digital'),
+  );
+
 }
 
 /**
@@ -45,4 +67,13 @@ function assure_digital_preprocess_page(&$variables) {
   $variables['site_slogan'] = $site_config->get('slogan');
   // logo needs to be placed within specified folder
   $variables['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+
+  $phone_label = theme_get_setting('mobile_label','assure_digital');
+  $phone_number = theme_get_setting('mobile_number','assure_digital');
+  if($phone_label){
+    $variables['phone_label'] =  $phone_label;
+  }
+  if($phone_number){
+    $variables['phone_number'] =  $phone_number;
+  }
 }

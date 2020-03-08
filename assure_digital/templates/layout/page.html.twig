@@ -99,6 +99,16 @@
             <span class="menu-global menu-bottom"></span>
           </div>
         </div>
+      {% if phone_label is not empty and phone_number is not empty %}
+        <div class="top-phone-number">
+          <div class="top-phone-number-wrapper">
+            <span class="phone-label">{{ phone_label }}</span>
+            <span class="phone-separator"> | </span>
+            <a  class="phone-number" href="tel:{{ phone_number }}"><span>{{ phone_number }}</span></a>
+            <a class="phone-icon" href="tel:{{ phone_number }}"><span class="ad-icon icon-phone"></span></a>
+          </div>
+        </div>
+      {% endif %}
       {% endif %}
       {% if container_navbar %}
     </div>

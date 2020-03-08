@@ -70,6 +70,13 @@
         font-weight: 300;
         color: #fff;
         display: none;
+        max-width: 468px;
+        margin-left: 50px;
+        margin-bottom: 35px;
+        margin-top: 5px;
+        @media (max-width: 991px) {
+          margin-left: 46px;
+        }
         &.active-desc{
           display: none;
         }

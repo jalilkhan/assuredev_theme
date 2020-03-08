@@ -25,7 +25,7 @@
 
        .hero-left {
 
-         h2 {
+         h1 {
            letter-spacing: 1.5px;
 
            &:before {
@@ -276,7 +276,7 @@
 
     .hero-left {
 
-      h2 {
+      h1 {
         margin-bottom: 80px;
         width: 100%;
         font-size: 24px;
@@ -628,10 +628,15 @@ main#content{
 
 @media (min-width: 1200px){
   .container{
-    max-width: 100% ;
+    max-width: 1760px;
   }
   main#content{
     padding-left: 0;
     padding-right: 0;
+  }
+}
+@media (max-width: 767px){
+  main#content{
+    padding: 0px;
   }
 }

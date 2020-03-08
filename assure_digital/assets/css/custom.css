@@ -33,7 +33,7 @@ header#header #navbar-main .navbar-brand {
   position: relative;
   padding: 60px;
 }
-@media (max-width: 812px) {
+@media (max-width: 991px) {
   .stages-boxes-container .field--name-field-panel-items > .field__item {
     flex: 0 0 100%;
     max-width: 100%;
@@ -67,26 +67,54 @@ header#header #navbar-main .navbar-brand {
   left: 60px;
   width: 100px;
   height: 100px;
-  line-height: 100px;
+  line-height: 30px;
   font-size: 30px;
   background-color: #FFC910;
   color: #2C3442;
+  padding: 35px 23px;
+}
+@media (max-width: 767px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn {
+    width: 100% !important;
+    left: 50%;
+    text-align: left;
+    padding-left: 30px !important;
+    transform: translateX(-50%);
+  }
 }
 @media (max-width: 1279px) {
   .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn {
     height: 60px;
     bottom: -30px;
-    line-height: 40px;
+    line-height: 34px;
     padding: 12px;
   }
 }
-@media (max-width: 812px) {
+@media (max-width: 991px) {
   .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn {
     display: block;
   }
 }
 .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn i.fa {
   transform: none;
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn {
+    font-size: 22px;
+  }
+}
+.stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn:hover {
+  width: 350px !important;
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn:hover {
+    width: 250px !important;
+  }
+}
+@media (max-width: 767px) {
+  .stages-boxes-container .field--name-field-panel-items > .field__item.stage-box-active .btn:hover {
+    width: 100% !important;
+  }
 }
 .stages-boxes-container .field--name-field-panel-items > .field__item .btn {
   position: absolute;
@@ -104,7 +132,7 @@ header#header #navbar-main .navbar-brand {
 .stages-boxes-container .field--name-field-panel-items > .field__item .btn i.fa {
   transform: rotate(45deg);
 }
-@media (max-width: 812px) {
+@media (max-width: 991px) {
   .stages-boxes-container .field--name-field-panel-items > .field__item .btn {
     display: none;
   }
@@ -169,10 +197,11 @@ a.btn.btn-animate {
   animation: fade_out_show 0.5s;
   max-width: 458px;
 }
-a.btn.btn-animate .fa {
+a.btn.btn-animate span.ad-icon {
   position: absolute;
+  right: 28px;
 }
-.btn.btn-animate:hover span {
+.btn.btn-animate:hover span.btn-text {
   display: inline-block;
   animation: fade_in_show 0.5s;
   white-space: nowrap;

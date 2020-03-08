@@ -52,9 +52,8 @@
     <div class="">
       <h4>{{ content.field_panel_item_heading }}</h4>
       {{ content.field_panel_item_body }}
-      <a href="#" class="btn btn-icon-yellow"><i class="fa fa-arrow-right"></i></a>
-      <a href="{{ content.field_panel_item_link[0]['#url']|render }}" class="btn btn-yellow btn-collapsed">
-        <i class="fa fa-arrow-right"></i>
+      <a href="{{ content.field_panel_item_link[0]['#url']|render }}" class="btn btn-yellow btn-collapsed btn-animate">
+        <span class="btn-text">{{ content.field_panel_item_link[0]['#title']|render }}</span> <span class="ad-icon icon-arrow-right"></span>
       </a>
     </div>
     {{ content|without('field_panel_item_body', 'field_panel_item_heading', 'field_panel_item_link') }}

@@ -74,6 +74,14 @@ var app = {
     });
 
     // STAGE BOX HOVER
+    var mq = window.matchMedia( "(max-width: 767px)" );
+    if (mq.matches) {
+      $('.stages-boxes-container .field--name-field-panel-items > .field__item').addClass('stage-box-active');
+    }
+    else {
+      $('.stages-boxes-container .field--name-field-panel-items > .field__item:first-child').addClass('stage-box-active');
+
+    }
     $('.stages-boxes-container .field--name-field-panel-items > .field__item').mouseenter(function () {
       $('.stages-boxes-container .field--name-field-panel-items > .field__item').removeClass('stage-box-active');
       $(this).addClass('stage-box-active');

@@ -39,7 +39,7 @@ header#header{
       max-width: 33.33333%;
       position: relative;
       padding: 60px;
-      @media (max-width: 812px){
+      @media (max-width: 991px){
         flex: 0 0 100%;
         max-width: 100%;
         padding: 50px 25px;
@@ -70,21 +70,42 @@ header#header{
           left: 60px;
           width: 100px;
           height: 100px;
-          line-height: 100px;
+          line-height: 30px;
           font-size: 30px;
           background-color: #FFC910;
           color: #2C3442;
+          padding: 35px 23px;
+
+          @media (max-width: 767px){
+            width: 100% !important;
+            left: 50%;
+            text-align: left;
+            padding-left: 30px !important;
+            transform: translateX(-50%);
+          }
           @media (max-width: 1279px){
             height: 60px;
             bottom: -30px;
-            line-height: 40px;
+            line-height: 34px;
             padding: 12px;
           }
-          @media (max-width: 812px){
+          @media (max-width: 991px){
             display: block;
           }
           i.fa{
             transform: none;
+          }
+          @media (min-width: 992px) and (max-width: 1279px){
+            font-size: 22px;
+          }
+          &:hover{
+            width: 350px !important;
+            @media (min-width: 992px) and (max-width: 1279px){
+              width: 250px !important;
+            }
+            @media (max-width: 767px){
+              width: 100% !important;
+            }
           }
         }
       }
@@ -103,7 +124,7 @@ header#header{
         i.fa{
           transform: rotate(45deg);
         }
-        @media (max-width: 812px){
+        @media (max-width: 991px){
           display: none;
         }
       }
@@ -169,12 +190,13 @@ a.btn.btn-animate {
   transition: all 0.8s ease;
   animation: fade_out_show 0.5s;
   max-width: 458px;
-  .fa{
+  span.ad-icon{
     position: absolute;
+    right: 28px;
   }
 }
 
-.btn.btn-animate:hover span {
+.btn.btn-animate:hover span.btn-text {
   display: inline-block;
   animation: fade_in_show 0.5s;
   white-space: nowrap;
