@@ -10505,7 +10505,6 @@ html {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
-  height: calc( 100vh - 159px);
 }
 
 .hero-section .hero-left h2, .hero-section .hero-right h2 {
